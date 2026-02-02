@@ -1,49 +1,43 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Row, Text } from "@once-ui-system/core";
+import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Pareesh",
+  lastName: "Yadav",
+  get name() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+  role: "Software Developer Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "pareeshyadav@gmail.com",
+  location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Hindi"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
   display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: (
+    <>
+      I occasionally write about design, technology, and share thoughts on the intersection of
+      creativity and engineering.
+    </>
+  ),
 };
 
 const social: Social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/yadav-pareesh",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://in.linkedin.com/in/pareeshyadav",
     essential: true,
   },
   {
@@ -52,6 +46,12 @@ const social: Social = [
     link: `mailto:${person.email}`,
     essential: true,
   },
+  {
+    name: "Twitter(X)",
+    icon: "twitter",
+    link: "https://x.com/pareesh_yadav",
+    essential: true,
+  }
 ];
 
 const home: Home = {
@@ -60,28 +60,26 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Engineering scalable solutions from front to back</>,
   featured: {
     display: true,
-    title: (
-      <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured work
-        </Text>
-      </Row>
-    ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    title: <>Featured Project: <strong className="ml-4">SleekCMS</strong></>,
+    href: "/work/sleekcms-a-headless-cms", // Updated to point to your major work
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      I'm {person.name}, a Software Development Engineer at 
+      <Logo 
+        icon="/images/sleeksky-logo-dark.svg" 
+        style={{ display: "inline-flex", top: "0.25em", marginLeft: "0.25em", marginRight: "0.25em" }}
+      /> 
+      where I architect modern web applications. Outside of professional sprints, 
+      I focus on building collaborative tools and exploring headless architectures.
+    </>
   ),
 };
 
-const about: About = {
+const about:About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
@@ -102,9 +100,9 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+       Hi, I'm Pareesh Yadav. Software Development Engineer.<br/><br/>
+       I build high-performance, accessible, and scalable web applications. 
+       Currently engineering digital solutions at Sleeksky Private Limited.
       </>
     ),
   },
@@ -113,12 +111,12 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "SleekSky",
+        timeframe: "Jan 2023 - Present",
+        role: "Software Developer Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
+            Redesigned the UI/UX for the SleekSky platform, resulting in a 20% increase in user
             engagement and 30% faster load times.
           </>,
           <>
@@ -129,29 +127,13 @@ const about: About = {
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            src: "/images/projects/project-01/cover-001.png",
+            alt: "sleeksky project image",
             width: 16,
             height: 9,
           },
         ],
-      },
-      {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
-        ],
-        images: [],
-      },
+      }
     ],
   },
   studies: {
@@ -159,7 +141,7 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
+        name: "Makhanlal Chaturvedi University",
         description: <>Studied software engineering.</>,
       },
       {
@@ -169,73 +151,74 @@ const about: About = {
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true, 
+    title: "Technical Skills",
     skills: [
       {
-        title: "Figma",
+        title: "Frontend Development",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Expertise in building highly interactive UIs using <b>JavaScript</b>, <b>TypeScript</b>, and <b>Angular</b>. 
+            Specializing in modern styling frameworks like <b>Tailwind CSS</b>, <b>Material UI</b>, and <b>Mantine UI</b>.
+          </>
         ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Next.js & React",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Developing SEO-optimized, high-performance web applications with <b>Next.js</b> and <b>React</b>. 
+            Proficient in server-side rendering, static site generation, and seamless deployment on <b>Vercel</b>.
+          </>
         ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            alt: "Next.js Application Preview",
             width: 16,
             height: 9,
           },
         ],
       },
+      {
+        title: "Mobile & Cross-Platform",
+        description: (
+          <>
+            Leveraging <b>React Native</b> to build native mobile experiences for iOS and Android 
+            from a single codebase, ensuring consistent performance and design.
+          </>
+        ),
+        images: [],
+      },
+      {
+        title: "Backend & API Development",
+        description: (
+          <>
+            Building robust server-side logic and RESTful APIs using <b>Node.js</b> and <b>Express.js</b>. 
+            Proficient in API architecting, testing with <b>Postman</b>, and managing data with <b>SQL/MySQL</b>.
+          </>
+        ),
+        images: [],
+      },
+      {
+        title: "Software Engineering & Architecture",
+        description: (
+          <>
+            Building scalable systems by creating Microservices and custom <b>NPM packages</b>. 
+            Streamlining collaboration and version control via <b>GitHub</b>.
+          </>
+        ),
+        images: [],
+      },
     ],
-  },
+}
 };
 
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing about design, coding and tech...",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route

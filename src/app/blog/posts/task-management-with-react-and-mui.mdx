@@ -1,0 +1,33 @@
+---
+title: "Building Collaborative Task Systems"
+summary: "Key learnings from developing app.taskivities.com using React and Material UI."
+publishedAt: "2025-12-28"
+tag: "Product Development"
+---
+
+## Collaboration First
+
+Building **Taskivities** required a deep focus on real-time state synchronization. As the lead engineer, my goal was to ensure that task updates were reflected for all team members without manual refreshes.
+
+### UI Strategy with Material UI
+
+We chose **Material UI** for its robust component set, which allowed us to build complex task boards with ease.
+
+<CodeBlock
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`<Grid container spacing={2}>
+  {tasks.map((task) => (
+    <Grid item xs={12} md={4} key={task.id}>
+      <TaskCard data={task} onStatusChange={updateTask} />
+    </Grid>
+  ))}
+</Grid>`,
+    language: "tsx",
+    label: "components/TaskBoard.tsx"
+  }
+]} />
+
+The result is a scalable, professional task manager that handles day-to-day collaboration for modern teams.

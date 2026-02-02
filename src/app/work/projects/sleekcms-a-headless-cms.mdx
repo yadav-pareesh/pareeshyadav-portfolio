@@ -1,0 +1,45 @@
+---
+title: "SleekCMS: A Modern Headless CMS and Static Site Builder"
+publishedAt: "2026-01-26"
+summary: "Enhancing a robust headless CMS platform (app.sleekcms.com) with advanced API integrations, UI/UX improvements, and architectural logic using React, Mantine UI, and Tailwind CSS."
+images:
+  - "/images/projects/sleekcms/cover-06.png"
+  - "/images/projects/sleekcms/cover-05.png"
+  - "/images/projects/sleekcms/cover-03.png"
+  - "/images/projects/sleekcms/cover-04.png"
+  - "/images/projects/sleekcms/cover-02.png"
+  - "/images/projects/sleekcms/cover-01.png"
+team:
+  - name: "Pareesh Yadav"
+    role: "Software Developer Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/pareeshyadav/"
+---
+
+## Overview
+
+[SleekCMS](https://www.sleekcms.com) is a high-performance headless CMS and static site generator designed to simplify content delivery. Working on [app.sleekcms.com](https://app.sleekcms.com), I focused on bridging the gap between distributed backend services and an intuitive administrative interface through robust API orchestration.
+
+## Key Contributions
+
+- **Complex API Integration & Orchestration**: Integrated a vast array of RESTful APIs to handle core CMS functionalities. This included connecting the frontend with backend services for content fetching, media uploads, and real-time data synchronization.
+- **Third-Party Deployment Logic**: Developed the integration layer for hosting providers like **Netlify**. I implemented logic to trigger automated builds and monitor deployment statuses via webhooks and API calls directly from the CMS dashboard.
+- **UI Overhaul with Mantine & Tailwind**: Rebuilt core interface modules using **Mantine UI** components combined with **Tailwind CSS**. This hybrid approach ensured high accessibility standards while maintaining a unique, sleek brand identity.
+- **Dynamic Content Modeling Logic**: Refined the frontend logic for managing nested content models. I optimized the relationship mapping between content types, ensuring that the UI accurately reflects complex JSON schemas returned by the API.
+- **Secure Data Handling**: Implemented secure API communication patterns, including token-based authentication and centralized error handling to manage rate-limiting and connection timeouts gracefully.
+
+## Technologies Used
+
+- **React & Axios/Fetch**: For managing asynchronous API requests and state synchronization.
+- **Mantine UI**: Used for complex components like modals, notifications, and data tables.
+- **Tailwind CSS**: For fine-grained control over the responsive layout and dark/light themes.
+- **Postman**: For testing and documenting API endpoints during the integration phase.
+- **Netlify API**: For managing site deployments and build triggers.
+
+## Challenges and Learnings
+
+One of the most significant challenges was managing the **asynchronous state** across the application. When integrating multiple APIs—such as fetching content entries while simultaneously checking deployment status—maintaining a "single source of truth" in the React state was critical. I implemented optimistic UI updates to ensure the application felt "snappy" even when waiting for backend confirmations. This experience solidified my expertise in building resilient, API-driven architectures.
+
+## Outcome
+
+The integration of these APIs turned SleekCMS into a truly "connected" platform. Users can now move from content creation to a live production site on Netlify with a single click, thanks to the seamless communication between the frontend, the CMS engine, and third-party services.

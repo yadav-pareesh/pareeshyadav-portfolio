@@ -1,0 +1,33 @@
+---
+title: "Unified Styling: Combining Mantine UI with Tailwind CSS"
+summary: "How to leverage Mantine's robust component logic with Tailwind's utility-first styling for maximum flexibility."
+publishedAt: "2026-01-20"
+tag: "Frontend"
+---
+
+## The Hybrid Approach
+
+In modern web development, choosing between a component library and a utility-first framework is a common dilemma. In my recent work, I've found that using **Mantine UI** for complex components (like DatePickers or Modals) and **Tailwind CSS** for layout and spacing provides the ultimate developer experience.
+
+### Configuration
+
+To ensure both libraries work in harmony without style conflicts, you can wrap your application in the `MantineProvider` and use Tailwind's `important` selector if necessary.
+
+<CodeBlock
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`// tailwind.config.js
+module.exports = {
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  corePlugins: {
+    preflight: false, // Prevents conflicts with Mantine's base styles
+  },
+};`,
+    language: "javascript",
+    label: "tailwind.config.js"
+  }
+]} />
+
+This setup allows for "unnatural speed" when building complex dashboards.

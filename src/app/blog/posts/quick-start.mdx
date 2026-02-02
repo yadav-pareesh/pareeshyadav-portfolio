@@ -1,43 +1,50 @@
 ---
-title: "Quick start with Magic Portfolio"
-subtitle: "A comprehensive guide to setting up your professional portfolio in minutes"
-summary: "Magic Portfolio is a comprehensive, MDX-based, SEO-friendly, responsive portfolio template built with Once UI and Next.js."
-image: "/images/gallery/horizontal-1.jpg"
-publishedAt: "2025-04-23"
-tag: "Magic Portfolio"
+title: "Quick Start: Building a High-Performance Portfolio"
+summary: "A guide to the tech stack behind this portfolio: A scalable, MDX-based, SEO-friendly system built with React, Mantine UI, and Tailwind CSS."
+image: "/images/og/home.jpg"
+publishedAt: "2026-01-26"
+tag: "Web Development"
 ---
 
 ## About
 
-Magic Portfolio is a comprehensive, MDX-based, SEO-friendly, responsive portfolio template built with Once UI and Next.js.
+This portfolio is engineered to be more than just a static resume. It is a comprehensive, MDX-driven platform designed for speed, accessibility, and high SEO rankings. By combining the layout power of **Tailwind CSS** with the enterprise-grade components of **Mantine UI**, I've created a system that is both visually stunning and technically robust.
 
-## License
+## Architecture
 
-Magic Portfolio is licensed under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). You can only use it for personal purposes, and you must attribute the original work. The attribution is added in the footer by default, but you can place it in any other, visible part of your site.
+The site leverages a modular architecture where content is decoupled from the UI. By using MDX, I can write project case studies and blog posts in Markdown while embedding live React components directly into the text.
 
-Subscribe to the [Once UI Pro plan](https://once-ui.com/pricing) to extend the license to [Dopler CC](https://once-ui.com/products/magic-portfolio).
 
-## Quick start
 
-Clone the git repository:
+## Quick Start
+
+If you are looking to set up a similar environment for a modern React project, follow these steps:
+
+### 1. Initialize the Project
+Clone the base repository structure:
 
 <CodeBlock compact marginBottom="16" codes={[
   {
-    code: "git clone https://github.com/once-ui-system/magic-portfolio.git",
+    code: "git clone https://github.com/pareesh-yadav/professional-portfolio.git",
     language: "bash"
   }
 ]} />
 
-Install the necessary dependencies:
+### 2. Install Dependencies
+Ensure you have the latest versions of Mantine and Tailwind CSS installed:
 
 <CodeBlock compact marginBottom="16" codes={[
   {
-    code: "npm install",
+    code: "npm install @mantine/core @mantine/hooks @emotion/react tailwindcss",
     language: "bash"
   }
 ]} />
 
-Start the local development server:
+### 3. Configure the Theme
+Set up your `tailwind.config.js` to work in harmony with Mantine's theme tokens to ensure a consistent dark and light mode experience.
+
+### 4. Run Development Server
+Start building your components with real-time hot reloading:
 
 <CodeBlock compact marginBottom="16" codes={[
   {
@@ -45,3 +52,13 @@ Start the local development server:
     language: "bash"
   }
 ]} />
+
+## Why This Stack?
+
+- **Mantine UI**: Provides complex hooks (like `use-media-query`) and polished components (Modals, Selects) out of the box.
+- **Tailwind CSS**: Allows for rapid, "unnatural speed" when tweaking layouts and responsive designs.
+- **MDX**: Gives me the flexibility to turn my technical notes into interactive blog posts without touching the core codebase.
+
+---
+
+**Would you like me to add a section to this blog post about how you integrated the SleekCMS API to fetch these blog posts dynamically?**

@@ -1,0 +1,32 @@
+---
+title: "Architecting Scalable Microservices with NPM"
+summary: "How to decouple business logic into reusable NPM packages to maintain clean code across multiple projects."
+publishedAt: "2026-01-10"
+tag: "Architecture"
+---
+
+## Why Microservices?
+
+Working at **Sleeksky**, I've realized that code duplication is the enemy of scalability. By moving shared logic into private **NPM packages**, we can maintain a single source of truth for our core business rules.
+
+### Publishing a Shared Logic Package
+
+The key is to use **TypeScript** for better developer experience and **GitHub Actions** for automated versioning and publishing.
+
+<CodeBlock
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`{
+  "name": "@sleeksky/core-logic",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts"
+}`,
+    language: "json",
+    label: "package.json"
+  }
+]} />
+
+This approach allows our team to update a single package and have those changes reflect across the entire Sleeksky ecosystem.

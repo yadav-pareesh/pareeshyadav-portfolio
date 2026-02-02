@@ -1,0 +1,32 @@
+---
+title: "Monitoring Netlify Deployments via Webhooks"
+summary: "Implementing a real-time status tracker in your CMS dashboard using third-party APIs."
+publishedAt: "2026-01-05"
+tag: "DevOps"
+---
+
+## Bridging the CMS and the Cloud
+
+For **app.sleekcms.com**, users needed to know exactly when their site was live. We achieved this by integrating the **Netlify API**.
+
+### Implementation
+
+We set up a webhook listener that triggers a notification in the React frontend whenever the deployment status changes from `building` to `ready`.
+
+<CodeBlock
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`const checkStatus = async (siteId) => {
+  const { status } = await netlifyApi.getDeployStatus(siteId);
+  if (status === 'ready') {
+    showNotification({ title: 'Success', message: 'Site is live!' });
+  }
+};`,
+    language: "tsx",
+    label: "hooks/useDeployment.ts"
+  }
+]} />
+
+This real-time feedback loop significantly improved user confidence in our static site builder.

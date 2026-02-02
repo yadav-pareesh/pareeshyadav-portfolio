@@ -1,0 +1,35 @@
+---
+title: "Advanced API Orchestration in React"
+summary: "Strategies for managing multiple asynchronous data streams and maintaining a single source of truth."
+publishedAt: "2026-01-15"
+tag: "Backend Integration"
+---
+
+## Managing Asynchronous State
+
+When building data-heavy platforms like **SleekCMS**, managing multiple API calls—from content fetching to deployment status—is a significant challenge.
+
+### Centralizing Requests
+
+I use a centralized service layer to handle authentication headers and error logging. This ensures that every request follows a consistent pattern.
+
+<CodeBlock
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`const apiService = async (endpoint, options = {}) => {
+  const response = await fetch(\`\${process.env.API_BASE_URL}\${endpoint}\`, {
+    ...options,
+    headers: { 'Authorization': \`Bearer \${token}\` }
+  });
+  return response.json();
+};`,
+    language: "tsx",
+    label: "services/api.ts"
+  }
+]} />
+
+
+
+By implementing **Optimistic UI updates**, we ensure that the user experience remains snappy even during slow network conditions.
